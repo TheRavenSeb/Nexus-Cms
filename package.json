@@ -1,0 +1,30 @@
+{
+  "name": "nexus-cms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node src/index.js",
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheRavenSeb/Nexus-Cms.git"
+  },
+  "keywords": [
+    "Nexus"
+  ],
+  "author": "TheRavenSeb (Caleb Thomas)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheRavenSeb/Nexus-Cms/issues"
+  },
+  "homepage": "https://github.com/TheRavenSeb/Nexus-Cms#readme",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "discord.js": "^14.16.3",
+    "dotenv": "^16.4.7",
+    "mongoose": "^8.8.4",
+    "path": "^0.12.7"
+  }
+}
