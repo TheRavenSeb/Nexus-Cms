@@ -60,6 +60,7 @@ module.exports = {
         userInDatabase.CombatMinutes = userInDatabase.CombatMinutes + minutes - 60;
       } else {
         userInDatabase.CombatMinutes += minutes;
+        userInDatabase.CombatHours += hours;
       }
 
 
