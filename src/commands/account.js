@@ -41,6 +41,7 @@ module.exports = {
                 { name: 'MOS', value: user.Mos, inline: true },
                 { name: 'Join Date', value: user.JoinDate.toDateString(), inline: true },
                 { name: 'Combat Hours', value: user.CombatHours.toString(), inline: true },
+                { name: 'Combat Minutes', value: user.CombatMinutes.toString(), inline: true },
                 { name: 'Roles', value: role, inline: true }
             )
             
