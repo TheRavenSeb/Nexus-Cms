@@ -18,10 +18,16 @@ module.exports = {
 		console.info(`[Discord bot]:Handling ${client.commands.size} commands`);
 
 		const activities = [
-			`and watching over ${client.guilds.cache.size} servers!`,
-			"over the Arcane Magica Community!",
-			`Lemon is now a developer :D`,
-			`beepu beepu I see you!`,
+			'You are better as a sandbag then a soilder',
+			'Stay active to get promoted',
+			'You are a soilder first',
+			'You are a reaper second',
+			"Sustindum Victoriam!!"
+			,"Sustindum Victoriam!!"
+			,"Sustindum Victoriam!!"
+
+
+			
 		];
     
 		setInterval(() => {
