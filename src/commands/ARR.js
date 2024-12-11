@@ -11,12 +11,7 @@ module.exports = {
       .setCustomId('after-action-report')
       .setTitle('After Action Report');
 
-    // Create individual text input fields, each in its own ActionRow
-    const missionNameInput = new TextInputBuilder()
-      .setCustomId('mission_name')
-      .setLabel('Mission Name')
-      .setStyle(TextInputStyle.Short);
-    const missionNameRow = new ActionRowBuilder().addComponents(missionNameInput);
+    
 
     const missionTypeInput = new TextInputBuilder()
       .setCustomId('mission_type')

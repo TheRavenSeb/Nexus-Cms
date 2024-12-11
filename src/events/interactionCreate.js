@@ -21,6 +21,15 @@ if (interaction.customId === 'after-action-report') {
 	if(!missionTypes.includes(missionType)) return interaction.reply({ content: 'Invalid Mission Type', ephemeral: true });
 	if(missionParticipants.length < 1) return interaction.reply({ content: 'You must provide at least one participant', ephemeral: true });
 	// Create an embed to display the information
+	var message = '\``` Mission Participants times \n';
+	for (const participant of missionParticipants) {
+		const user = await User.findOne({Name: participant });
+		if (user) {
+			message += `${participant} - Gained ${missionTime.split(':')[0]} hours and ${missionTime.split(':')[1]} minutes\n`;
+		}
+
+	}
+	message += '\```';
 	const embed = new EmbedBuilder()
 		.setTitle('After Action Report')
 		.setDescription('Alert New Mission Report! by '+ interaction.user.tag)
@@ -32,19 +41,12 @@ if (interaction.customId === 'after-action-report') {
 			{ name: 'Mission Date', value: missionDate, inline: true },
 			{ name: 'Mission Time(HH:MM)', value: missionTime, inline: true },
 			{ name: 'Mission Participants', value: missionParticipants.toString(), inline: false },
+			{ name: 'Mission Participants Times', value: message, inline: false},
 			{ name: 'Mission Notes', value: missionNotes, inline: false }
 		);
- var message = '\``` Mission Participants times \n';
-	for (const participant of missionParticipants) {
-		const user = await User.findOne({Name: participant });
-		if (user) {
-			message += `${participant} - Gained ${missionTime.split(':')[0]} hours and ${missionTime.split(':')[1]} minutes\n`;
-		}
+ 
 
-	}
-	message += '\```';
-
-	embed.addField('Mission Participants Times', message);
+	
 	
 
 	// Send the embed to a specific channel
