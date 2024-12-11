@@ -50,7 +50,6 @@ module.exports = {
 
     // Add the ActionRows to the modal
     modal.addComponents(
-      missionNameRow,
       missionTypeRow,
       missionDateRow,
       missionTimeRow,

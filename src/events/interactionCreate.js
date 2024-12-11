@@ -11,7 +11,7 @@ const command = client.commands.get(interaction.commandName);
 if (interaction.isModalSubmit()){
 if (interaction.customId === 'after-action-report') {
 	// Retrieve values from the modal's input fields
-	const missionName = interaction.fields.getTextInputValue('mission_name');
+	
 	const missionType = interaction.fields.getTextInputValue('mission_type');
 	const missionDate = interaction.fields.getTextInputValue('mission_date');
 	const missionTime = interaction.fields.getTextInputValue('mission_time');
@@ -23,12 +23,11 @@ if (interaction.customId === 'after-action-report') {
 	// Create an embed to display the information
 	const embed = new EmbedBuilder()
 		.setTitle('After Action Report')
-		.setDescription('Here is the After Action Report:')
+		.setDescription('Alert New Mission Report! by '+ interaction.user.tag)
 		.setColor('#0099ff')
 		.setTimestamp()
 		.addFields(
 			{ name: 'Submitted By', value: interaction.user.tag, inline: true },
-			{ name: 'Mission Name', value: missionName, inline: true },
 			{ name: 'Mission Type', value: missionType, inline: true },
 			{ name: 'Mission Date', value: missionDate, inline: true },
 			{ name: 'Mission Time(HH:MM)', value: missionTime, inline: true },
