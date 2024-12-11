@@ -15,6 +15,8 @@ const Communty = new Schema({
     IsNCO: {type: Boolean, required: true},
     IsRecruit: {type: Boolean, required: true},
     IsVeteran: {type: Boolean, required: true},
+    Trainings: {type: Array, default: []},
+    Notes: {type: String, default: ''},
     
 
 
