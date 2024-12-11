@@ -54,7 +54,8 @@ module.exports = {
             {name:'O-3 Captain', value:'O-3 Captain'},
             {name:'O-4 Major', value:'O-4 Major'},
             {name:'O-5 Lieutenant Colonel', value:'O-5 Lieutenant Colonel'},
-            {name:'O-6 Colonel', value:'O-6 Colonel'}
+            {name:'O-6 Colonel', value:'O-6 Colonel'},
+            {name:"Director", value:"Director"}
           ]
         const marksmenID = "1315395996506783864"
         const SupportgunnerID = "1315396000191912961"
