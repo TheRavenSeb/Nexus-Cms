@@ -1,4 +1,4 @@
-const { EmbedBuilder, SlashCommandBuilder, ModalBuilder, TextInputBuilder, TextInputStyle, ActionRowBuilder } = require('discord.js');
+const { EmbedBuilder, SlashCommandBuilder, ModalBuilder, TextInputBuilder, TextInputStyle,StringSelectMenuBuilder, ActionRowBuilder } = require('discord.js');
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -21,7 +21,14 @@ module.exports = {
     const missionTypeInput = new TextInputBuilder()
       .setCustomId('mission_type')
       .setLabel('Mission Type')
-      .setStyle(TextInputStyle.Short);
+      .setStyle(TextInputStyle.Short)
+      .addChoices(
+          {name:'Training', value:'Training'},
+          {name:'Operation', value:'Operation'},
+          {name:'Joint Operation', value:'Joint Operation'},
+          {name:'Deployment', value:'Deployment'},
+          {name:'Other', value:'Other'}
+      );
     const missionTypeRow = new ActionRowBuilder().addComponents(missionTypeInput);
 
     const missionDateInput = new TextInputBuilder()
@@ -30,9 +37,14 @@ module.exports = {
       .setStyle(TextInputStyle.Short);
     const missionDateRow = new ActionRowBuilder().addComponents(missionDateInput);
 
+    const missionTimeInput = new TextInputBuilder().setCustomId('mission_time').setLabel('Mission Time').setStyle(TextInputStyle.Short).setPlaceholder('HH:MM')
+    const missionTimeRow = new ActionRowBuilder().addComponents(missionTimeInput);
+
+
     const missionParticipantsInput = new TextInputBuilder()
       .setCustomId('mission_participants')
       .setLabel('Mission Participants')
+      .setPlaceholder('List all participants discord usernames as a comma-separated list (e.g. John Doe, Jane Smith)')
       .setStyle(TextInputStyle.Paragraph);
     const missionParticipantsRow = new ActionRowBuilder().addComponents(missionParticipantsInput);
 
@@ -47,6 +59,7 @@ module.exports = {
       missionNameRow,
       missionTypeRow,
       missionDateRow,
+      missionTimeRow,
       missionParticipantsRow,
       missionNotesRow
     );

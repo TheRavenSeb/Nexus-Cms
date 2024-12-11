@@ -14,7 +14,8 @@ if (interaction.customId === 'after-action-report') {
 	const missionName = interaction.fields.getTextInputValue('mission_name');
 	const missionType = interaction.fields.getTextInputValue('mission_type');
 	const missionDate = interaction.fields.getTextInputValue('mission_date');
-	const missionParticipants = interaction.fields.getTextInputValue('mission_participants');
+	const missionTime = interaction.fields.getTextInputValue('mission_time');
+	const missionParticipants = interaction.fields.getTextInputValue('mission_participants').split(',').map(p => p.trim());
 	const missionNotes = interaction.fields.getTextInputValue('mission_notes');
 
 	// Create an embed to display the information
@@ -28,9 +29,22 @@ if (interaction.customId === 'after-action-report') {
 			{ name: 'Mission Name', value: missionName, inline: true },
 			{ name: 'Mission Type', value: missionType, inline: true },
 			{ name: 'Mission Date', value: missionDate, inline: true },
-			{ name: 'Mission Participants', value: missionParticipants, inline: false },
+			{ name: 'Mission Time(HH:MM)', value: missionTime, inline: true },
+			{ name: 'Mission Participants', value: missionParticipants.toString(), inline: false },
 			{ name: 'Mission Notes', value: missionNotes, inline: false }
 		);
+ var message = '\``` Mission Participants times \n';
+	for (const participant of missionParticipants) {
+		const user = await User.findOne({Name: participant });
+		if (user) {
+			message += `${participant} - Gained ${missionTime.split(':')[0]} hours and ${missionTime.split(':')[1]} minutes\n`;
+		}
+
+	}
+	message += '\```';
+
+	embed.addField('Mission Participants Times', message);
+	
 
 	// Send the embed to a specific channel
 	const channelId = '1315390276113662094'; // Replace with your channel ID
