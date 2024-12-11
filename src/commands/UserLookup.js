@@ -16,10 +16,10 @@ module.exports = {
     ),
   async execute(interaction) {
     if(interaction.options.getSubcommand() === 'member'){
-        const user = interaction.options.getUser('user');
+        const player = interaction.options.getUser('user');
     var role = ''
 
-    User.findOne({ DiscordId: interaction.user.id }).then(user => {
+    User.findOne({ DiscordId: player.id }).then(user => {
         if (!user) {
             return interaction.reply({ content: 'You are not in the database!'});
         }
