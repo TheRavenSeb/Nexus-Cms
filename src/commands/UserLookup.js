@@ -4,7 +4,16 @@ module.exports = {
   data: new SlashCommandBuilder()
     .setName('info')
     .setDescription('Chek your account information')
-    .addSubCommand(subCommand => subCommand.setName("user").setDescription("Lookup a user's information").addUserOption(option => option.setName("user").setDescription("The user to lookup"))),
+    .addSubcommand(subcommand =>
+        subcommand
+        .setName('member')
+        .setDescription('description').addMentionableOption(option => 
+            option.setName('user')
+            .setDescription('description')
+            .setRequired(true)
+        )
+        
+    ),
   async execute(interaction) {
     if(interaction.options.getSubcommand() === 'user'){
         const user = interaction.options.getUser('user');
