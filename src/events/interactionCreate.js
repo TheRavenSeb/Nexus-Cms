@@ -21,7 +21,7 @@ if (interaction.customId === 'after-action-report') {
 	if(!missionTypes.includes(missionType)) return interaction.reply({ content: 'Invalid Mission Type', ephemeral: true });
 	if(missionParticipants.length < 1) return interaction.reply({ content: 'You must provide at least one participant', ephemeral: true });
 	// Create an embed to display the information
-	var message = '\``` Mission Participants times \n';
+	var message = '\``` Mission Participants times ( run /combat-hours add to add them) \n';
 	for (const participant of missionParticipants) {
 		const user = await User.findOne({Name: participant });
 		if (user) {
