@@ -15,7 +15,7 @@ module.exports = {
         
     ),
   async execute(interaction) {
-    if(interaction.options.getSubcommand() === 'user'){
+    if(interaction.options.getSubcommand() === 'member'){
         const user = interaction.options.getUser('user');
     var role = ''
 
