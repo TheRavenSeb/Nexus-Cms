@@ -20,7 +20,6 @@ module.exports = {
 
     const missionTypeInput = new StringSelectMenuBuilder()
       .setCustomId('mission_type')
-      .setLabel('Mission Type')
       .setPlaceholder('Select a mission type')
       .addChoices([
           {name:'Training', value:'Training'},
