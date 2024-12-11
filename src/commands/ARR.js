@@ -18,17 +18,11 @@ module.exports = {
       .setStyle(TextInputStyle.Short);
     const missionNameRow = new ActionRowBuilder().addComponents(missionNameInput);
 
-    const missionTypeInput = new StringSelectMenuBuilder()
+    const missionTypeInput = new TextInputBuilder()
       .setCustomId('mission_type')
       .setLabel('Mission Type')
       .setPlaceholder('Select a mission type')
-      .addOptions([
-          {name:'Training', value:'Training'},
-          {name:'Operation', value:'Operation'},
-          {name:'Joint Operation', value:'Joint Operation'},
-          {name:'Deployment', value:'Deployment'},
-          {name:'Other', value:'Other'}
-      ]);
+      .setStyle(TextInputStyle.Short);
     const missionTypeRow = new ActionRowBuilder().addComponents(missionTypeInput);
 
     const missionDateInput = new TextInputBuilder()

@@ -17,7 +17,9 @@ if (interaction.customId === 'after-action-report') {
 	const missionTime = interaction.fields.getTextInputValue('mission_time');
 	const missionParticipants = interaction.fields.getTextInputValue('mission_participants').split(',').map(p => p.trim());
 	const missionNotes = interaction.fields.getTextInputValue('mission_notes');
-
+	const missionTypes = ['Training', 'Operation', 'Deployment', 'Other'];
+	if(!missionTypes.includes(missionType)) return interaction.reply({ content: 'Invalid Mission Type', ephemeral: true });
+	if(missionParticipants.length < 1) return interaction.reply({ content: 'You must provide at least one participant', ephemeral: true });
 	// Create an embed to display the information
 	const embed = new EmbedBuilder()
 		.setTitle('After Action Report')
