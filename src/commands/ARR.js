@@ -21,7 +21,7 @@ module.exports = {
     const missionTypeInput = new TextInputBuilder()
       .setCustomId('mission_type')
       .setLabel('Mission Type')
-      .setPlaceholder('Select a mission type')
+      .setPlaceholder('Training, Operation, Deployment, Other')
       .setStyle(TextInputStyle.Short);
     const missionTypeRow = new ActionRowBuilder().addComponents(missionTypeInput);
 
