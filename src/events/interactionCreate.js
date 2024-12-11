@@ -15,7 +15,7 @@ if (interaction.customId === 'after-action-report') {
 	const missionType = interaction.fields.getTextInputValue('mission_type');
 	const missionDate = interaction.fields.getTextInputValue('mission_date');
 	const missionTime = interaction.fields.getTextInputValue('mission_time');
-	const missionParticipants = interaction.fields.getTextInputValue('mission_participants').split(',').map(p => p.trim());
+	const missionParticipants = interaction.fields.getTextInputValue('mission_participants').split(',');
 	const missionNotes = interaction.fields.getTextInputValue('mission_notes');
 	const missionTypes = ['Training', 'Operation', 'Deployment', 'Other'];
 	if(!missionTypes.includes(missionType)) return interaction.reply({ content: 'Invalid Mission Type', ephemeral: true });
