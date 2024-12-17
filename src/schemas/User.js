@@ -8,6 +8,8 @@ const Communty = new Schema({
     JoinDate: {type: Date, default: Date.now},
     CombatHours: {type: Number, defualt: 0},
     CombatMinutes: {type: Number, default: 0},
+    GoodCombatHours: {type: Number, default: 0},
+    GoodCombatMinutes: {type: Number, default: 0},
 
     IsInstructor: {type: Boolean, required: true},
     IsEnlisted: {type: Boolean, required: true},

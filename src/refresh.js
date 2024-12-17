@@ -4,7 +4,7 @@ async function ahh(){
 await Mongo()
 
 
-User.findOneAndUpdate({CombatMinutes: {$exists:false}}, {$set: {CombatMinutes: 0, CombatHours:0}}).then(console.log("done"))
+User.findOneAndUpdate({GoodCombatHours: {$exists:false}}, {$set: {GoodCombatHours:0 , GoodCombatMinutes:0}}).then(console.log("done"))
 
 
 }
