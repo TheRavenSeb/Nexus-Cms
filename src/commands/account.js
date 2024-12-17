@@ -42,7 +42,10 @@ module.exports = {
                 { name: 'Join Date', value: user.JoinDate.toDateString(), inline: true },
                 { name: 'Combat Hours', value: user.CombatHours.toString(), inline: true },
                 { name: 'Combat Minutes', value: user.CombatMinutes.toString(), inline: true },
+                { name: 'Good Combat Hours', value: user.GoodCombatHours.toString(), inline: true },
+                { name: 'Good Combat Minutes', value: user.GoodCombatMinutes.toString(), inline: true },
                 { name: 'Roles', value: role, inline: true }
+
             )
             
         interaction.reply({ embeds: [embed] });
