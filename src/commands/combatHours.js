@@ -99,6 +99,21 @@ module.exports = {
 
     } else if (subcommand === 'remove') {
       userInDatabase.CombatHours -= hours;
+
+      if (userInDatabase.CombatMinutes - minutes < 0) {
+        userInDatabase.CombatHours -= 1;
+        userInDatabase.CombatMinutes = 60 + userInDatabase.CombatMinutes - minutes;
+      } else {
+        userInDatabase.CombatMinutes -= minutes;
+      }
+      userInDatabase.GoodCombatHours -= goodhours;
+      if (userInDatabase.GoodCombatMinutes - goodminutes < 0) {
+        userInDatabase.GoodCombatHours -= 1;
+        userInDatabase.GoodCombatMinutes = 60 + userInDatabase.GoodCombatMinutes - goodminutes;
+      } else {
+        userInDatabase.GoodCombatMinutes -= goodminutes;
+      }
+      
     }
     userInDatabase.save();
     return interaction.reply({ content: `Combat hours updated to ${userInDatabase.CombatHours}` });
