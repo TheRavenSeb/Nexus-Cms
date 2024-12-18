@@ -52,9 +52,9 @@ module.exports = {
                 { name: 'Rank', value: user.Rank, inline: true },
                 { name: 'MOS', value: user.Mos, inline: true },
                 { name: 'Join Date', value: user.JoinDate.toDateString(),  },
-                { name: 'Combat Hours', value: user.CombatHours.toString(),  },
+                { name: 'Combat Hours', value: user.CombatHours.toString()  },
                 { name: 'Combat Minutes', value: user.CombatMinutes.toString(), inline: true },
-                { name: 'Good Combat Hours', value: user.GoodCombatHours.toString(),  },
+                { name: 'Good Combat Hours', value: user.GoodCombatHours.toString()  },
                 { name: 'Good Combat Minutes', value: user.GoodCombatMinutes.toString(), inline: true },
                 { name: 'Roles', value: role}
             )
